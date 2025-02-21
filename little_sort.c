@@ -67,11 +67,16 @@ void	ft_sort_five(t_swap *index)
 	push_a(index);
 }
 
-void	one_arg(t_swap *index)
+void	one_two_arg(t_swap *index)
 {
 	if (index->a_len == 1)
 	{
 		write(2, "Error\n", 6);
+		exit_swap(index);
+	}
+	if (index->a_len == 2 && !check_sorted(index))
+	{
+		swap_a(index);
 		exit_swap(index);
 	}
 }
